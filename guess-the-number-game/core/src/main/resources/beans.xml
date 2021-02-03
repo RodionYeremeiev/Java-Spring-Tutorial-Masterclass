@@ -6,4 +6,9 @@
 
     <bean id="numberGenerator" class="com.gmail.ryitlearning.NumberGenetratorImpl"/>
 
+    <bean id="game" class="com.gmail.ryitlearning.GameImpl">
+<!--        <constructor-arg ref="numberGenerator"/>-->
+        <property name="numberGenerator" ref="numberGenerator"/>
+    </bean>
+
 </beans>
