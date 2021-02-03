@@ -21,7 +21,6 @@
     <dependencyManagement>
 
         <dependencies>
-
             <!--Logging-->
             <dependency>
                 <groupId>ch.qos.logback</groupId>
