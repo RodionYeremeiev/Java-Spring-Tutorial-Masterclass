@@ -3,6 +3,9 @@ package com.gmail.ryitlearning;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class GameImpl implements Game {
 
     // == constants ==
@@ -22,12 +25,8 @@ public class GameImpl implements Game {
 //    public GameImpl(NumberGenerator numberGenerator) {
 //        this.numberGenerator = numberGenerator;
 //    }
-
-    // == public methods ==
-    public void setNumberGenerator(NumberGenerator numberGenerator){
-        this.numberGenerator = numberGenerator;
-    }
-
+    //== init ==
+    @PostConstruct
     @Override
     public void reset() {
         smallest = 0;
@@ -37,6 +36,17 @@ public class GameImpl implements Game {
         number = numberGenerator.next();
         log.debug("the number is {}", number);
     }
+
+    @PreDestroy
+    public void preDestroy(){
+        log.info("in Game pre Destroy()");
+    }
+
+    // == public methods ==
+    public void setNumberGenerator(NumberGenerator numberGenerator){
+        this.numberGenerator = numberGenerator;
+    }
+
 
     @Override
     public int getNumber() {

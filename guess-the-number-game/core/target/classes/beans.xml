@@ -7,8 +7,12 @@
     <bean id="numberGenerator" class="com.gmail.ryitlearning.NumberGenetratorImpl"/>
 
     <bean id="game" class="com.gmail.ryitlearning.GameImpl">
-<!--        <constructor-arg ref="numberGenerator"/>-->
+<!--    <bean id="game" class="com.gmail.ryitlearning.GameImpl" init-method="reset">-->
+
+    <!--        <constructor-arg ref="numberGenerator"/>-->
         <property name="numberGenerator" ref="numberGenerator"/>
     </bean>
+
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
 
 </beans>
