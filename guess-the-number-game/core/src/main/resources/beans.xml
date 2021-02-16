@@ -7,15 +7,17 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:annotation-config/>
-    <bean id="numberGenerator" class="com.gmail.ryitlearning.NumberGenetratorImpl"/>
+<!--    <context:annotation-config/>-->
+    <context:component-scan base-package="com.gmail.ryitlearning"/>
 
-    <bean id="game" class="com.gmail.ryitlearning.GameImpl">
-<!--    <bean id="game" class="com.gmail.ryitlearning.GameImpl" init-method="reset">-->
-    <!--        <constructor-arg ref="numberGenerator"/>-->
-<!--        <property name="numberGenerator" ref="numberGenerator"/>-->
-    </bean>
+<!--    <bean id="numberGenerator" class="com.gmail.ryitlearning.NumberGenetratorImpl"/>-->
 
-<!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+<!--    <bean id="game" class="com.gmail.ryitlearning.GameImpl">-->
+<!--&lt;!&ndash;    <bean id="game" class="com.gmail.ryitlearning.GameImpl" init-method="reset">&ndash;&gt;-->
+<!--    &lt;!&ndash;        <constructor-arg ref="numberGenerator"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="numberGenerator" ref="numberGenerator"/>&ndash;&gt;-->
+<!--    </bean>-->
+
+<!--&lt;!&ndash;    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>&ndash;&gt;-->
 
 </beans>
