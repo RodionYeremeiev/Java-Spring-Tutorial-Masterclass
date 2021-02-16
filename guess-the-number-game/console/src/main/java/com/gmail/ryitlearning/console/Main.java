@@ -1,5 +1,8 @@
-package com.gmail.ryitlearning;
+package com.gmail.ryitlearning.console;
 
+import com.gmail.ryitlearning.AppConfig;
+import com.gmail.ryitlearning.MessageGenerator;
+import com.gmail.ryitlearning.NumberGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -36,6 +39,7 @@ public class Main {
         MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
         log.info("getMainMessage = {}", messageGenerator.getMainMessage());
         log.info("getResultMessage = {}", messageGenerator.getResultMessage());
+
         //close context (container)
         context.close();
     }

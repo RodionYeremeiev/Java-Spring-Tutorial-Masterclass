@@ -1,3 +1,7 @@
 com\gmail\ryitlearning\NumberGenerator.class
-com\gmail\ryitlearning\Main.class
+com\gmail\ryitlearning\Game.class
+com\gmail\ryitlearning\GameImpl.class
 com\gmail\ryitlearning\NumberGenetratorImpl.class
+com\gmail\ryitlearning\MessageGeneratorImpl.class
+com\gmail\ryitlearning\MessageGenerator.class
+com\gmail\ryitlearning\AppConfig.class
