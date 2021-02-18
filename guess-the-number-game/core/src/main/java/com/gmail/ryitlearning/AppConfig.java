@@ -11,7 +11,7 @@ public class AppConfig {
     // == bean methods ==
     @Bean
     public NumberGenerator numberGenerator() {
-        return new NumberGenetratorImpl();
+        return new NumberGeneratorImpl();
     }
 
     @Bean
