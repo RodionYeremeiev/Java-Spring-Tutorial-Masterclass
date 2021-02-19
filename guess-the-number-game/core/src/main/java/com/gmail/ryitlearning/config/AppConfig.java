@@ -1,10 +1,13 @@
-package com.gmail.ryitlearning;
+package com.gmail.ryitlearning.config;
 
+import com.gmail.ryitlearning.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 @Configuration
+@Import(GameConfig.class)
 @ComponentScan(basePackages = "com.gmail.ryitlearning")
 public class AppConfig {
 

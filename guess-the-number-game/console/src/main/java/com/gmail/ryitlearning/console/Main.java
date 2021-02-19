@@ -1,6 +1,6 @@
 package com.gmail.ryitlearning.console;
 
-import com.gmail.ryitlearning.AppConfig;
+import com.gmail.ryitlearning.config.AppConfig;
 import com.gmail.ryitlearning.MessageGenerator;
 import com.gmail.ryitlearning.NumberGenerator;
 import org.slf4j.Logger;
