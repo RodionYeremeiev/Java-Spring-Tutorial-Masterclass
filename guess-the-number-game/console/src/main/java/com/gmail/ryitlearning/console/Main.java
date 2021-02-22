@@ -1,8 +1,6 @@
 package com.gmail.ryitlearning.console;
 
-import com.gmail.ryitlearning.config.AppConfig;
-import com.gmail.ryitlearning.MessageGenerator;
-import com.gmail.ryitlearning.NumberGenerator;
+import com.gmail.ryitlearning.config.GameConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -11,34 +9,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     private static final Logger log = LoggerFactory.getLogger(Main.class);
 
-//    private static final String CONFIG_LOCATION = "beans.xml";
-
     public static void main(String[] args) {
         log.info("Guess The Number");
 
         //create context (container)
         ConfigurableApplicationContext context
-                = new AnnotationConfigApplicationContext(AppConfig.class);
-
-        // get numberGenerator bean from context (container)
-        NumberGenerator numberGenerator
-                = context.getBean(NumberGenerator.class);
-
-        // call method next() to get a random number
-        int number = numberGenerator.next();
-
-        //log generated number
-        log.info("number = {}", number);
-
-//        // get game bean from context (container)
-//        Game game = context.getBean(Game.class);
-
-//        // call reset method
-//        game.reset();
-
-        MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
-        log.info("getMainMessage = {}", messageGenerator.getMainMessage());
-        log.info("getResultMessage = {}", messageGenerator.getResultMessage());
+                = new AnnotationConfigApplicationContext(GameConfig.class);
 
         //close context (container)
         context.close();

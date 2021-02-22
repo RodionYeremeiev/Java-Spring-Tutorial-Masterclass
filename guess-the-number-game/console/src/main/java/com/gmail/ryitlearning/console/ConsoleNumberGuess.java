@@ -12,22 +12,21 @@ import org.springframework.stereotype.Component;
 import java.util.Scanner;
 
 @Component
-//public class ConsoleNumberGuess implements ApplicationListener<ContextRefreshedEvent> {
 public class ConsoleNumberGuess {
+
     // == constants ==
     private static final Logger log = LoggerFactory.getLogger(ConsoleNumberGuess.class);
 
-//    @EventListener()
-//    public void start(ContextRefreshedEvent contextRefreshedEvent) {
-//        log.info("start() --> Container ready to use");
-//    }
-
     // == fields ==
-    @Autowired
-    private Game game;
+    private final Game game;
+    private final MessageGenerator messageGenerator;
 
+    // == constructors ==
     @Autowired
-    private MessageGenerator messageGenerator;
+    public ConsoleNumberGuess(Game game, MessageGenerator messageGenerator) {
+        this.game = game;
+        this.messageGenerator = messageGenerator;
+    }
 
     // == Events ==
     @EventListener(ContextRefreshedEvent.class)

@@ -5,11 +5,13 @@ import com.gmail.ryitlearning.MaxNumber;
 import com.gmail.ryitlearning.MinNumber;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @PropertySource("classpath:config/game.properties")
+@ComponentScan(basePackages = "com.gmail.ryitlearning")
 public class GameConfig {
 
     // == fields ==

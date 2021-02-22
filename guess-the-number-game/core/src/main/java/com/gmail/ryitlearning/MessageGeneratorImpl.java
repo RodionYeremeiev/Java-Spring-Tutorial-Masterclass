@@ -3,23 +3,30 @@ package com.gmail.ryitlearning;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
+@Component
 public class MessageGeneratorImpl implements MessageGenerator {
     // == constants ==
     private static final Logger log = LoggerFactory.getLogger(MessageGeneratorImpl.class);
 
     // == Fields ==
+    private final Game game;
+
+    // == constructors ==
     @Autowired
-    private Game game;
-//    private int guessCount = 10;
+    public MessageGeneratorImpl(Game game) {
+        this.game = game;
+    }
 
     // == init ==
     @PostConstruct
     public void init() {
         log.debug("the value of game field = {}", game);
     }
+
     // == Public Methods ==
     @Override
     public String getMainMessage() {
